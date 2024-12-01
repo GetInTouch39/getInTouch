@@ -1,0 +1,54 @@
+.input-div:before,
+.input-div:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #38d39f;
+  transition: 0.4s;
+}
+.input-div:before {
+  right: 50%;
+}
+
+.input-div:after {
+  left: 50%;
+}
+
+.input-div.focus:before,
+.input-div.focus:after {
+  width: 50%;
+}
+.i {
+  display: flex;
+  align-items: center;
+}
+.i .ii {
+  transition: 0.3s;
+}
+.input {
+  position: relative;
+  height: 40px;
+}
+.inputLabel {
+  position: absolute;
+  left: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.4rem;
+  transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+  z-index: -2;
+}
+.input-div.focus .inputLabel {
+  top: -5px;
+  font-size: 1.1rem;
+}
+.inputField {
+  padding: 0.6rem;
+  font-size: 1rem;
+  color: #555;
+  font-family: "poppins", sans-serif;
+}
