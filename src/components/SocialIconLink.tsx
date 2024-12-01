@@ -22,7 +22,7 @@ const IconLink = ({ href, Icon, label }: IconLinkProps) => {
       target={"_blank"}
       className={`${getColor(
         label
-      )} text-xl sm:text-2xl md:text-3xl transform transition-all hover:scale-110 `}
+      )} text-xl sm:text-2xl md:text-3xl transform transition-all hover:scale-110  `}
     >
       <Icon />
     </Link>
