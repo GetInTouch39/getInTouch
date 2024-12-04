@@ -10,14 +10,7 @@ const Teacher = () => {
     <>
       <Link to={"teacherForm"}>Add</Link>
       {teachers?.map((teacher) => (
-        <TeacherProfileCard
-          key={teacher._id}
-          profileInfo={teacher.profileInfo}
-          socialLinks={teacher.socialLinks}
-          profileImg={teacher.profileImage}
-          teacherName={teacher.teacherName}
-          subject={teacher.subject}
-        />
+        <TeacherProfileCard key={teacher._id} teacher={teacher} />
       ))}
     </>
   );

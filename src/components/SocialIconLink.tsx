@@ -24,7 +24,7 @@ const IconLink = ({ href, Icon, label }: IconLinkProps) => {
         label
       )} text-xl sm:text-2xl md:text-3xl transform transition-all hover:scale-110  `}
     >
-      <Icon color={"red"} />
+      <Icon />
     </Link>
   );
 };

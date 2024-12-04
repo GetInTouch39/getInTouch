@@ -3,35 +3,18 @@ import { ProfilePicRound } from "./ProfilePicRound";
 import { TeacherCardFrame } from "./TeacherCardFrame";
 import { SocialIconMap, ProfileInfoIconMap } from "../react-query/data/teacher";
 import SocialIconLink from "./SocialIconLink";
+import { Teacher } from "../react-query/Forms/TeacherForm";
 
-interface TecherData {
-  _id: string;
-  text: string;
-  label: string;
-}
-interface SocialLinks {
-  _id: string;
-  href: string;
-  label: string;
-}
 interface TeacherCardProps {
-  profileInfo: TecherData[];
-  socialLinks: SocialLinks[];
-  profileImg: string;
-  teacherName: string;
-  subject: string;
+  teacher: Teacher;
 }
-const TeacherProfileCard = ({
-  profileInfo,
-  socialLinks,
-  teacherName,
-  profileImg,
-  subject,
-}: TeacherCardProps) => {
+const TeacherProfileCard = ({ teacher }: TeacherCardProps) => {
+  const { profileImage, subject, socialLinks, teacherName, profileInfo } =
+    teacher;
   return (
     <TeacherCardFrame>
       <div className="flex justify-center items-center z-10">
-        <ProfilePicRound image={profileImg} />
+        <ProfilePicRound image={profileImage} />
       </div>
       <div className=" relative">
         <div className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 capitalize">
