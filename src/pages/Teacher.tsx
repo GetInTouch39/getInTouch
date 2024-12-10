@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
 import TeacherProfileCard from "../components/TeacherProfileCard";
+import useAllTeacher from "../react-query/hooks/useAllTeacher";
 
-import useTeacher from "../react-query/hooks/useTeacher";
-
-const Teacher = () => {
-  const { data: teachers } = useTeacher();
-
+const TeacherMap = () => {
+  const { data: teachers } = useAllTeacher();
   return (
     <>
       <Link to={"teacherForm"}>Add</Link>
+
       {teachers?.map((teacher) => (
-        <TeacherProfileCard key={teacher._id} teacher={teacher} />
+        <div key={teacher._id}>
+          <TeacherProfileCard teacher={teacher} />
+          <Link className="absolute" to={`teacherUpd/${teacher._id}`}>
+            goto Edit
+          </Link>
+        </div>
       ))}
     </>
   );
 };
 
-export default Teacher;
+export default TeacherMap;

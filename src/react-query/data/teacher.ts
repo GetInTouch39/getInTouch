@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import * as Yup from "yup";
-import { Teacher } from "../Forms/TeacherForm";
+import { Teacher } from "../services/teacherService";
 
 export const ProfileInfoIconMap: { [key: string]: IconType } = {
   phone: FaPhoneAlt,

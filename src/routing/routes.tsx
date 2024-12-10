@@ -11,14 +11,15 @@ import Subjects from "../pages/Subjects";
 import Performance from "../pages/Performance";
 import Exams from "../pages/Exams";
 import Logout from "../pages/Logout";
-import TeacherForm from "../react-query/Forms/TeacherForm";
-import Teacher from "../pages/Teacher";
+import TeacherForm from "../react-query/Forms/AddTeacherForm";
+import TeacherMap from "../pages/Teacher";
 import Courses from "../pages/Courses";
 import Announcements from "../pages/Announcements";
 import Conversations from "../pages/Conversations";
 import Events from "../pages/Events";
 import Fees from "../pages/Fees";
 import ContactUs from "../pages/ContactUs";
+import UpdateTeacher from "../react-query/Forms/UpdateTeacher";
 
 const router = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
@@ -36,13 +37,16 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: "Teachers",
+        path: "teachers",
         element: <TeachersLayout />,
         children: [
           {
             index: true,
-            path: "",
-            element: <Teacher />,
+            element: <TeacherMap />,
+          },
+          {
+            path: "teacherUpd/:id",
+            element: <UpdateTeacher />,
           },
           {
             path: "teacherForm",

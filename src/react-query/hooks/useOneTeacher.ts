@@ -2,11 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import teacherService, { Teacher } from "../services/teacherService";
 import { CACHE_KEY_TEACHER } from "../data/constant";
 
-const useGenre = () => {
-  return useQuery<Teacher[], Error>({
-    queryKey: CACHE_KEY_TEACHER,
-    queryFn: teacherService.getAll,
+const useOneTeacher = (id: string) => {
+  return useQuery<Teacher, Error>({
+    queryKey: [CACHE_KEY_TEACHER, id],
+    queryFn: () => teacherService.getById(id),
     staleTime: 1 * 1000,
   });
 };
-export default useGenre;
+
+export default useOneTeacher;

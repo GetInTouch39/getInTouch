@@ -3,7 +3,8 @@ import { ProfilePicRound } from "./ProfilePicRound";
 import { TeacherCardFrame } from "./TeacherCardFrame";
 import { SocialIconMap, ProfileInfoIconMap } from "../react-query/data/teacher";
 import SocialIconLink from "./SocialIconLink";
-import { Teacher } from "../react-query/Forms/TeacherForm";
+import { Teacher } from "../react-query/services/teacherService";
+import { FaPencil } from "react-icons/fa6";
 
 interface TeacherCardProps {
   teacher: Teacher;
@@ -15,6 +16,12 @@ const TeacherProfileCard = ({ teacher }: TeacherCardProps) => {
     <TeacherCardFrame>
       <div className="flex justify-center items-center z-10">
         <ProfilePicRound image={profileImage} />
+        <button
+          className="absolute bottom-8 left-8 z-10 bg-slate-50 rounded-full p-2"
+          onClick={() => console.log()}
+        >
+          <FaPencil />
+        </button>
       </div>
       <div className=" relative">
         <div className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 capitalize">
