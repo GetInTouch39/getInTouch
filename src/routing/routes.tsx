@@ -11,8 +11,7 @@ import Subjects from "../pages/Subjects";
 import Performance from "../pages/Performance";
 import Exams from "../pages/Exams";
 import Logout from "../pages/Logout";
-import TeacherForm from "../react-query/Forms/AddTeacherForm";
-import TeacherMap from "../pages/Teacher";
+import Teachermap from "../pages/Teacher";
 import Courses from "../pages/Courses";
 import Announcements from "../pages/Announcements";
 import Conversations from "../pages/Conversations";
@@ -20,6 +19,7 @@ import Events from "../pages/Events";
 import Fees from "../pages/Fees";
 import ContactUs from "../pages/ContactUs";
 import UpdateTeacher from "../react-query/Forms/UpdateTeacher";
+import TeacherForm from "../react-query/Forms/AddTeacherForm";
 
 const router = createBrowserRouter([
   { path: "/", element: <LoginPage /> },
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <TeacherMap />,
+            element: <Teachermap />,
           },
           {
             path: "teacherUpd/:id",

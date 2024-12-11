@@ -6,11 +6,11 @@ interface AddTeacherContex {
   previousTeachers: Teacher[];
 }
 
-const useUpdateTeacher = (updatedValues: Teacher) => {
+const useUpdateTeacher = (updatedValues: Teacher, id: string) => {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   return useMutation<Teacher, Error, Teacher, AddTeacherContex>({
-    mutationFn: () => teacherService.update(updatedValues),
+    mutationFn: () => teacherService.update(updatedValues, id),
     onMutate: (newTeacher: Teacher) => {
       const previousTeachers =
         queryClient.getQueryData<Teacher[]>(CACHE_KEY_TEACHER) || [];

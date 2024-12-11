@@ -24,9 +24,9 @@ class APIClient<T extends Entity> {
   post = (data: T) => {
     return axiosInstance.post<T>(this.endpoint, data).then((res) => res.data);
   };
-  update = (updatedData: T) => {
+  update = (updatedData: T, id: string) => {
     return axiosInstance
-      .put(this.endpoint + "/" + updatedData._id, updatedData)
+      .put(this.endpoint + "/" + id, updatedData)
       .then((res) => res.data);
   };
   delete = (id: string) => {
